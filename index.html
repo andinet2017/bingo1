@@ -1,0 +1,216 @@
+<html>
+
+<head>
+	<!-- Author: 		ANDINET GEBRE -->
+	<!-- Date: 			03/17/2019 -->
+	<!-- Class:			CSCI 2240 - Client Side Programming -->
+	<!-- Handout3A Bingo Game Part A -->
+	<!-- Instructor:	Darren Pearson -->
+	<title>Homework #3</title>
+	<style>
+		body {
+			background-color: blue;
+			padding: 5px;
+		}
+
+		h1 {
+			color: white;
+			font-size: 30pt;
+			margin-left: 30px;
+		}
+
+		table {
+			border: 10px solid red;
+			margin-left: 30px;
+			background: #ADD9E2;
+		}
+
+		th {
+			color: red;
+			text-align: center;
+			width: 80px;
+			height: 80px;
+			vertical-align: middle;
+			border: 2px solid black;
+			border-top: 0px;
+			font-size: 24pt;
+		}
+
+		td {
+			vertical-align: middle;
+			text-align: center;
+			width: 80px;
+			height: 80px;
+			border: 2px solid black;
+			font-size: 16pt;
+		}
+
+		#r5c1,
+		#r5c2,
+		#r5c3,
+		#r5c4,
+		#r5c5 {
+			border-bottom: 0px;
+		}
+
+		#th1,
+		#r1c1,
+		#r2c1,
+		#r3c1,
+		#r4c1,
+		#r5c1 {
+			border-left: 0px;
+		}
+
+		#th5,
+		#r1c5,
+		#r2c5,
+		#r3c5,
+		#r4c5,
+		#r5c5 {
+			border-right: 0px;
+		}
+
+		#buttons {
+			margin: 25px;
+			margin-top: 10px;
+		}
+
+		.button {
+			margin-right: 10px;
+			width: 80px;
+			border-radius: 6px;
+			font-weight: bold;
+		}
+
+		#th1,
+		#th2,
+		#th3,
+		#th4,
+		#th5 {
+
+			font-family: Arvo;
+			font-weight: bold;
+			text-shadow:
+				-3px -3px 0 green,
+				3px -3px 0 green,
+				-3px 3px 0 green,
+				3px 3px 0 green,
+				4px 4px 0 #fff,
+				5px 5px 0 #fff,
+				6px 6px 0 #fff,
+				7px 7px 0 #fff;
+			font-size: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		function populateB() {
+			var Barray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+			for (i = 0; i < 5; i++) {
+				var index = Math.floor(Math.random() * (Barray.length));
+				document.getElementById("r" + (i + 1) + "c" + "1").innerHTML = Barray[index];
+				Barray[index] = Barray[0];
+				Barray.shift();
+			}
+		}
+
+		function populateI() {
+			var Barray = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+			for (i = 0; i < 5; i++) {
+				var index = Math.floor(Math.random() * (Barray.length));
+				document.getElementById("r" + (i + 1) + "c" + "2").innerHTML = Barray[index];
+				Barray[index] = Barray[0];
+				Barray.shift();
+			}
+		}
+
+		function populateN() {
+			var Barray = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
+			for (i = 0; i < 5; i++) {
+				var index = Math.floor(Math.random() * (Barray.length));
+				document.getElementById("r" + (i + 1) + "c" + "3").innerHTML = Barray[index];
+				Barray[index] = Barray[0];
+				Barray.shift();
+				document.getElementById("r3c3").innerHTML = "FREE";
+			}
+		}
+
+		function populateG() {
+			var Barray = [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
+			for (i = 0; i < 5; i++) {
+				var index = Math.floor(Math.random() * (Barray.length));
+				document.getElementById("r" + (i + 1) + "c" + "4").innerHTML = Barray[index];
+				Barray[index] = Barray[0];
+				Barray.shift();
+
+			}
+		}
+
+		function populateO() {
+			var Barray = [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75];
+			for (i = 0; i < 5; i++) {
+				var index = Math.floor(Math.random() * (Barray.length));
+				document.getElementById("r" + (i + 1) + "c" + "5").innerHTML = Barray[index];
+				Barray[index] = Barray[0];
+				Barray.shift();
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Random Bingo Card</h1>
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<th id="th1">B</th>
+			<th id="th2">I</th>
+			<th id="th3">N</th>
+			<th id="th4">G</th>
+			<th id="th5">O</th>
+		</tr>
+		<tr>
+			<td id="r1c1"></td>
+			<td id="r1c2"></td>
+			<td id="r1c3"></td>
+			<td id="r1c4"></td>
+			<td id="r1c5"></td>
+		</tr>
+		<tr>
+			<td id="r2c1"></td>
+			<td id="r2c2"></td>
+			<td id="r2c3"></td>
+			<td id="r2c4"></td>
+			<td id="r2c5"></td>
+		</tr>
+		<tr>
+			<td id="r3c1"></td>
+			<td id="r3c2"></td>
+			<td id="r3c3"></td>
+			<td id="r3c4"></td>
+			<td id="r3c5"></td>
+		</tr>
+		<tr>
+			<td id="r4c1"></td>
+			<td id="r4c2"></td>
+			<td id="r4c3"></td>
+			<td id="r4c4"></td>
+			<td id="r4c5"></td>
+		</tr>
+		<tr>
+			<td id="r5c1"></td>
+			<td id="r5c2"></td>
+			<td id="r5c3"></td>
+			<td id="r5c4"></td>
+			<td id="r5c5"></td>
+		</tr>
+	</table>
+	<div id="buttons">
+		<input id="button1" class="button" type="button" value="Populate B" onclick="populateB()" />
+		<input id="button1" class="button" type="button" value="Populate I" onclick="populateI()" />
+		<input id="button1" class="button" type="button" value="Populate N" onclick="populateN()" />
+		<input id="button1" class="button" type="button" value="Populate G" onclick="populateG()" />
+		<input id="button1" class="button" type="button" value="Populate O" onclick="populateO()" />
+	</div>
+</body>
+
+</html>
